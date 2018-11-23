@@ -2,8 +2,11 @@ import React, { Component, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-function Counter() {
-  const [count, setCount] = useState(1);
+interface CounterProps {
+  initialCount: number;
+}
+function Counter({ initialCount }: CounterProps) {
+  const [count, setCount] = useState(initialCount);
 
   return (
     <>
@@ -24,7 +27,7 @@ class App extends Component {
           <p>
             Edit <code>src/App.tsx</code> and save to reload.
           </p>
-          <Counter />
+          <Counter initialCount={3} />
         </header>
       </div>
     );
